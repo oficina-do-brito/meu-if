@@ -4,9 +4,7 @@
 
 ## Tecnologias utilizadas
 
-<img height="50" src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png">
-<img height="50" src="https://user-images.githubusercontent.com/25181517/183859966-a3462d8d-1bc7-4880-b353-e2cbed900ed6.png">
-<img height="50" src="https://user-images.githubusercontent.com/25181517/117207330-263ba280-adf4-11eb-9b97-0ac5b40bc3be.png">
+<img height="50" src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png"><img height="50" src="https://user-images.githubusercontent.com/25181517/183859966-a3462d8d-1bc7-4880-b353-e2cbed900ed6.png"><img height="50" src="https://user-images.githubusercontent.com/25181517/117207330-263ba280-adf4-11eb-9b97-0ac5b40bc3be.png">
 
 ## requisitos para rodar projeto na sua máquina
 
@@ -14,4 +12,8 @@
 
 ## Instruções para rodar projeto na sua máquina
 
-- docker start postgres_db && npm i && npm run dev
+- Executar os comandos na pasta raiz do projeto:
+
+```
+  chmod +x .docker/entrypoint.sh && docker-compose up
+```
