@@ -4,7 +4,7 @@ const routes = Router();
 
 routes.get('/', (request, response) => {
   return response.json({
-    message: `Bem vinso a app meu-if temos as seguintes rotas
+    message: `Bem vindo a app meu-if temos as seguintes rotas
       GET: /api ... 
     `,
   });
