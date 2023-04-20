@@ -1,5 +1,12 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
+import { CreateTableUsuario1682017574938 } from './migrations/1682017574938-CreateTableUsuario';
+import { CreateTableHorario1682017595402 } from './migrations/1682017595402-CreateTableHorario';
+import { CreateTableAdministrador1682017612328 } from './migrations/1682017612328-CreateTableAdministrador';
+import { CreateTableMotorista1682017634686 } from './migrations/1682017634686-CreateTableMotorista';
+import { CreateTableDocumento1682017644691 } from './migrations/1682017644691-CreateTableDocumento';
+import { CreateTableOnibus1682017660026 } from './migrations/1682017660026-CreateTableOnibus';
+import { CreateTableAluno1682017727318 } from './migrations/1682017727318-CreateTableAluno';
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
@@ -11,6 +18,14 @@ export const AppDataSource = new DataSource({
   synchronize: true,
   logging: false,
   entities: [],
-  migrations: [],
+  migrations: [
+    CreateTableUsuario1682017574938,
+    CreateTableHorario1682017595402,
+    CreateTableAdministrador1682017612328,
+    CreateTableMotorista1682017634686,
+    CreateTableDocumento1682017644691,
+    CreateTableOnibus1682017660026,
+    CreateTableAluno1682017727318,
+  ],
   subscribers: [],
 });

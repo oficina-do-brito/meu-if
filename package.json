@@ -27,7 +27,7 @@
     "typeorm": "0.3.15"
   },
   "scripts": {
-    "build":"tsc",
+    "build": "tsc",
     "start": "ts-node src/index.ts",
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
