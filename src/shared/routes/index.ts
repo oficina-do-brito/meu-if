@@ -1,6 +1,8 @@
+import HorarioContoller from '@modules/horario/controller/horario.controller';
 import { Router } from 'express';
 
 const routes = Router();
+const horarioController = new HorarioContoller();
 
 routes.get('/', (request, response) => {
   return response.json({
@@ -9,4 +11,6 @@ routes.get('/', (request, response) => {
     `,
   });
 });
+routes.get('/horarios', horarioController.index);
+
 export default routes;

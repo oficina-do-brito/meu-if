@@ -8,6 +8,8 @@ import { CreateTableDocumento1682017644691 } from './migrations/1682017644691-Cr
 import { CreateTableOnibus1682017660026 } from './migrations/1682017660026-CreateTableOnibus';
 import { CreateTableAluno1682017727318 } from './migrations/1682017727318-CreateTableAluno';
 
+import Horario from '@modules/horario/models/entities/horario.entity';
+
 export const AppDataSource = new DataSource({
   type: 'postgres',
   host: 'db',
@@ -17,7 +19,7 @@ export const AppDataSource = new DataSource({
   database: 'postgres',
   synchronize: true,
   logging: false,
-  entities: [],
+  entities: [Horario],
   migrations: [
     CreateTableUsuario1682017574938,
     CreateTableHorario1682017595402,
