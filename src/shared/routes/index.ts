@@ -57,6 +57,7 @@ routes.get('/', (request, response) => {
     ],
   });
 });
+//Horarios routes
 routes.get('/horarios', horarioController.index);
 
 //Onibus routes
