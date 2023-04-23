@@ -25,7 +25,15 @@ export const AppDataSource = new DataSource({
   database: 'postgres',
   synchronize: true,
   logging: false,
-  entities: [Horario, Usuario, Onibus, Aluno, Documento, Administrador, Motorista],
+  entities: [
+    Horario,
+    Usuario,
+    Onibus,
+    Aluno,
+    Documento,
+    Administrador,
+    Motorista,
+  ],
   migrations: [
     CreateTableUsuario1682017574938,
     CreateTableHorario1682017595402,

@@ -8,9 +8,53 @@ const busController = new OnibusController();
 
 routes.get('/', (request, response) => {
   return response.json({
-    message: `Bem vindo a app meu-if temos as seguintes rotas
-      GET: /api ... 
-    `,
+    resources: [
+      {
+        aluno: {
+          Post: '/aluno',
+          GetAll: '/aluno',
+          Get: '/aluno/:id',
+          Patch: 'aluno/:id',
+          Delete: 'aluno/:id',
+        },
+      },
+      {
+        documento: {
+          Post: '/documento',
+          GetAll: '/documento',
+          Get: '/documento/:id',
+          Patch: 'documento/:id',
+          Delete: 'documento/:id',
+        },
+      },
+      {
+        horario: {
+          Post: '/horario',
+          GetAll: '/horario',
+          Get: '/horario/:id',
+          Patch: 'horario/:id',
+          Delete: 'horario/:id',
+        },
+      },
+      {
+        motorista: {
+          Post: '/motorista',
+          GetAll: '/motorista',
+          Get: '/motorista/:id',
+          Patch: 'motorista/:id',
+          Delete: 'motorista/:id',
+        },
+      },
+      {
+        onibus: {
+          Post: '/onibus',
+          GetAll: '/onibus',
+          Get: '/onibus/onibus:id',
+          Patch: '/onibus:id',
+          Delete: '/onibus:id',
+        },
+      },
+    ],
   });
 });
 routes.get('/horarios', horarioController.index);
