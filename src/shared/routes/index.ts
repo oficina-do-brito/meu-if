@@ -1,10 +1,12 @@
 import HorarioContoller from '@modules/horario/controller/horario.controller';
+import MotoristaController from '@modules/motorista/controller';
 import OnibusController from '@modules/onibus/controller/onibus.controller';
 import { Router } from 'express';
 
 const routes = Router();
 const horarioController = new HorarioContoller();
 const busController = new OnibusController();
+const motoristaController = new MotoristaController();
 
 routes.get('/', (request, response) => {
   return response.json({
@@ -66,5 +68,8 @@ routes.get('/onibus/:id', busController.findOne);
 routes.post('/onibus', busController.create);
 routes.patch('/onibus/:id', busController.update);
 routes.delete('/onibus/:id', busController.deleteOne);
+
+//Motorista routes
+routes.get('/motorista', motoristaController.getAllMotorista);
 
 export default routes;

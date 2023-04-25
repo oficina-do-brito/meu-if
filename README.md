@@ -17,3 +17,11 @@
 ```
   chmod +x .docker/entrypoint.sh && docker-compose up
 ```
+
+## erros
+
+Pode ser que a databse não seja connectada então para entrar no container db e criar a database, usamos o comando:
+
+```
+ docker exec -it db psql -U postgres
+```
