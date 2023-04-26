@@ -6,15 +6,8 @@ export default class MotoristaController {
   constructor() {
     this._serviceMotorista = new MotoristaService();
   }
-  public getService(): MotoristaService {
-    return this._serviceMotorista;
-  }
-
-  public async getAllMotorista(
-    request: Request,
-    response: Response,
-  ): Promise<Response> {
-    const motoristas = this.getService().getAll();
+  getAllMotorista = async (request: Request, response: Response) => {
+    const motoristas = this._serviceMotorista.getAll();
     return response.json(motoristas);
-  }
+  };
 }

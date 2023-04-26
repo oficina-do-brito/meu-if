@@ -1,12 +1,16 @@
+import AdminController from '@modules/administrador/controller';
+import AlunoController from '@modules/aluno/controller';
 import HorarioContoller from '@modules/horario/controller/horario.controller';
 import MotoristaController from '@modules/motorista/controller';
 import OnibusController from '@modules/onibus/controller/onibus.controller';
 import { Router } from 'express';
 
 const routes = Router();
+const alunoControler = new AlunoController();
 const horarioController = new HorarioContoller();
-const busController = new OnibusController();
+const onibusController = new OnibusController();
 const motoristaController = new MotoristaController();
+const administradorController = new AdminController();
 
 routes.get('/', (request, response) => {
   return response.json({
@@ -59,17 +63,29 @@ routes.get('/', (request, response) => {
     ],
   });
 });
+
+//                                                              --      Modules            --
+//Admin routes
+routes.post('/administrador', administradorController.create);
+routes.get('/administrador', administradorController.getAll);
+routes.get('/administrador/:id', administradorController.getOne);
+routes.patch('/administrador/:id', administradorController.update);
+routes.delete('/administrador/:id', administradorController.delete);
+
 //Horarios routes
 routes.get('/horarios', horarioController.index);
 
 //Onibus routes
-routes.get('/onibus', busController.findAll);
-routes.get('/onibus/:id', busController.findOne);
-routes.post('/onibus', busController.create);
-routes.patch('/onibus/:id', busController.update);
-routes.delete('/onibus/:id', busController.deleteOne);
+routes.get('/onibus', onibusController.findAll);
+routes.get('/onibus/:id', onibusController.findOne);
+routes.post('/onibus', onibusController.create);
+routes.patch('/onibus/:id', onibusController.update);
+routes.delete('/onibus/:id', onibusController.deleteOne);
 
 //Motorista routes
 routes.get('/motorista', motoristaController.getAllMotorista);
+
+//Motorista routes
+routes.post('/aluno', alunoControler.create);
 
 export default routes;

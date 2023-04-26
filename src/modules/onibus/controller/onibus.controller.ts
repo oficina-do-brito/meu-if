@@ -16,7 +16,7 @@ export default class OnibusController {
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
-    const reqBody = request.body(); // CreateHorarioDto tem que ser
+    const reqBody = request.body; // CreateHorarioDto tem que ser
     const newOnibus = await this._onibusService.create(reqBody);
     return response.json(newOnibus);
   }

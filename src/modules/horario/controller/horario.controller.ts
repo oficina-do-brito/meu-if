@@ -17,13 +17,13 @@ export default class HorarioContoller {
     return response.json(resp);
   }
   public async create(request: Request, response: Response): Promise<Response> {
-    const reqhorario = request.body();
+    const reqhorario = request.body;
     const newHorarioCriado = await this._servicoHorario.create(reqhorario);
     return response.json(newHorarioCriado);
   }
   public async update(request: Request, response: Response): Promise<Response> {
     const idHorario = parseInt(request.params.id);
-    const horario = request.body();
+    const horario = request.body;
     const newHorarioCriado = await this._servicoHorario.update(
       idHorario,
       horario,
