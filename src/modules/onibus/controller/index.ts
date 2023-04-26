@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import OnibusService from '../service/onibus.service';
+import OnibusService from '../service';
 import { UpdateOnibusDto } from '../models/dtos/update-onibus.dto';
 
 export default class OnibusController {

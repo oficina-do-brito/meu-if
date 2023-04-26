@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { HorarioService } from '../service/horario.service';
+import { HorarioService } from '../service';
 
 export default class HorarioContoller {
   private _servicoHorario: HorarioService;

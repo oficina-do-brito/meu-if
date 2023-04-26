@@ -1,8 +1,8 @@
 import AdminController from '@modules/administrador/controller';
 import AlunoController from '@modules/aluno/controller';
-import HorarioContoller from '@modules/horario/controller/horario.controller';
+import HorarioContoller from '@modules/horario/controller';
 import MotoristaController from '@modules/motorista/controller';
-import OnibusController from '@modules/onibus/controller/onibus.controller';
+import OnibusController from '@modules/onibus/controller';
 import { Router } from 'express';
 
 const routes = Router();
@@ -72,6 +72,13 @@ routes.get('/administrador/:id', administradorController.getOne);
 routes.patch('/administrador/:id', administradorController.update);
 routes.delete('/administrador/:id', administradorController.delete);
 
+//Aluno routes
+routes.post('/aluno', alunoControler.create);
+routes.get('/aluno', alunoControler.findAll);
+routes.get('/aluno/:id', alunoControler.findOne);
+routes.patch('/aluno/:id', alunoControler.update);
+routes.delete('/aluno/:id', alunoControler.delete);
+
 //Horarios routes
 routes.get('/horarios', horarioController.index);
 
@@ -84,8 +91,5 @@ routes.delete('/onibus/:id', onibusController.deleteOne);
 
 //Motorista routes
 routes.get('/motorista', motoristaController.getAllMotorista);
-
-//Motorista routes
-routes.post('/aluno', alunoControler.create);
 
 export default routes;
